@@ -1,0 +1,3 @@
+[{'id': 0, 'name': "Fred Monster", 'value': "69.96", 'image': "acb.jpg"},
+ {'id': 1, 'name': "Water in a Box", 'value': "420.00", 'image': "WIB.jpg"},
+ {'id': 2, 'name': "Tumbone", 'value': "399.00", 'image': "Trumb.jpg"}]

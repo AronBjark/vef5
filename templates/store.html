@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <span>
+        <header class="header">
+            <h1>{% block title %}Bing Bong Búðin{% endblock %}</h1>
+        </header>
+    </span>
+    <span class="bleh">
+        <span class="items" id="salsa">
+        {% for x in salsa %}
+            <main id="book{{ x['id'] }}">
+                <div class="splap">
+                    <h2>{{ x['name'] }}</h2>
+                    <span class="container">
+                    <img class="center" width=250px src="{{ url_for('static', filename='img/'+x['image']) }}">
+                    </span>
+                    <a class="order button" href="/cart/add/{{ x['id'] }}">{{ x['value'] }}$</a>
+                </div>
+            </main>
+        {% endfor %}
+        </span>
+    </span>
+    <br>
+    <footer>
+        <a class="cartButton" href="/cart">cart</a>
+    </footer>
+{% endblock %}

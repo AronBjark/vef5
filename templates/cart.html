@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <header>
+        <h1 style="color:var(--main-color);text-align:center;">{% block title %}- Karfa -{% endblock %}</h1>
+    </header>
+    <span class="bleh">
+        <span class="cart">
+            {% if cart == "Karfan er Tóm :(" %}
+                <h2 style="text-align:center;margin:0 auto;">{{ cart }}</h2>
+            {% else %}
+                <table>
+                    <tr>
+                        <th>Nafn</th>
+                        <th>Fjöldi</th>
+                        <th>Verð</th>
+                        <th></th>
+                    </tr>
+                    {% for x in cartQuantity %} 
+                    <tr>
+                        <td>{{ x[0]['name'] }}</td>
+                        <td>{{ x[1] }}x</td>
+                        <td>{{ x[2] }}$</td>
+                        <td><a href="/remove/{{ x[0]['id'] }}">X</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <h4>Heildar Kostnaður <span>{{ price_sum }}$</span></h4>
+            {% endif %}
+        </span>
+        <span class="footerCart">
+            <footer>
+                <a class="buttonCartScreen" style="margin: 15px;"> - Borga - </a>
+            </footer>
+        <footer>
+            <a style="padding: 10px 32px;" class="buttonCartScreen" href="/"> - Til Baka - </a>
+            <a style="padding: 10px 32px;" class="buttonCartScreen" href="/clear"> - Losa úr Körfu - </a>
+        </footer>
+        </span>
+    </span>
+{% endblock %}
